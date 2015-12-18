@@ -1,54 +1,91 @@
-# JavaScript Automated Testing Layers #
+# Overview #
+
+This repo is the result of an internal work project.  I was tasked with coming up with a generic testing structure for use across client projects.  I used SapientNitroLA's carousel as a basic, sample project to apply testing to.  
+
+Since I was applying testing to a pre-existing project, I focused solely on functional testing since a proper unit testing implementation demands a TDD/BDD approach.  As such, I ended up focusing on Intern and Nightwatch since they are the most developed functional testing frameworks currently available.
+
+I used the Page Object pattern for both sets of tests since it is a good way to abstract away the DOM tree structure from the tests themselves.  The actual tests exist in the following folder: *[project root]/tests/functional/[framework]/index.js*.  The Page Object files are in *[project root]/tests/support/pages/[framework]/IndexPage.js*.
+
+
+# Usage #
+
+I implemented the same set of tests in Intern and Nightwatch:
+
+1. Load site: dynamic DOM wrapper elements should init
+2. First set of two tiles should be visible
+3. Click next button: second set of two tiles should be visible
+4. Click fourth pagination link: fourth set of two tiles should be visible
+5. Click next button: third set of two tiles should be visible
+6. Update carousel to be 3-up, click first pagination link: first set of three tiles should be visible
+
+The commands to initiate the tests reside in the scripts node of package.json and are run from the command line with the following commands: *npm run intern* or *npm run nightwatch*.
+
+
+# Intern vs. Nightwatch #
+
+| Intern                                  | Nightwatch                                          |
+|---------------------------------------- |---------------------------------------------------- |
+| Supports unit tests                     | Manages starting/stopping of selenium server\*      |
+| Supports different assertion libraries  | Cleaner console messaging during tests              |
+| Robust Promises interface               | Much simpler synchronous interface                  |
+| Good documentation                      | Better Page Object model                            |
+| AMD support                             | Supports chaining of custom methods out-of-the-box  |
+| Unit test support                       |                                                     |
+
+\* *In my opinion, this single feature is sufficient to justify use of Nightwatch over Intern*
+
+
+# Automated Testing Layers #
 
                       Code to be Tested
                               |
                               |
-                          Browser/OS 
-                           (local)
+                    OS/Browser Platform
                               |
-                              |                               ---
+                              |                               ----
                           WebDriver                              |
-                    (browser automation API)                     |
                               |                                  |- Selenium
                               |                                  |
-                    WebDriver Client/Server                      |
-        (i.e. selenium-webdriver, WebDriverIO, webdriver-sync)   |
-                              |                               ---
-                              |                               ---
+                    WebDriver Server/Client                      |
+                              |                               ----
+                              |                               ----
                       Assertion Library                          |
-                         (i.e. Chai)                             |
                               |                                  |- Testing Framework
                               |                                  |
                        Testing Harness                           |
-       (i.e. Jasmine, Mocha, Cucumber, Intern, Nightwatch)       |
-                              |                               ---
+                              |                               ----
                               |
                           Test Cases
-            (custom tests written by dev/QA engineer)
 
 
-# Glossary
+# Glossary #
 
-## TDD
+## Code to be Tested ##
 
-Software development process that relies on the repetition of a very short development cycle: first the developer writes an (initially failing) automated test case that defines a desired improvement or new function, then produces the minimum amount of code to pass that test, and finally refactors the new code to acceptable standards.
+This layer is the development code which is the subject of testing.  In the case of this repo, the carousel JS code in the library folder is what is being tested.
 
-## BDD
+## OS/Browser Platform ##
 
-By using terminology focused on the behavioural aspects of the system rather than testing, BDD attempts to help direct developers towards a focus on the real value to be found in TDD at its most successful.  Behavior Driven Development is more about interactions with the application than just unit testing. It forces the developer to understand the responsibility of the method he is about to write.
+This is the operating system/browser combination which the code above is being tested on.
 
-## Assertion
+## WebDriver ##
 
-An assertion is a statement that a predicate (Boolean-valued function, a true–false expression) is expected to always be true at that point in the code. If an assertion evaluates to false at run time, an assertion failure results, which typically causes the program to crash, or to throw an assertion exception.
+WebDriver is the browser automation API which enables the programmatic control of a modern browser.
 
-## Testing Framework
+## WebDriver Server/Client ##
 
-A test automation framework is an integrated system that sets the rules of automation of a specific product. This system integrates the function libraries, test data sources, object details and various reusable modules. These components act as small building blocks which need to be assembled to represent a business process. The framework provides the basis of test automation and simplifies the automation effort.
+This layer interacts with the WebDriver API and generally provides a unified interface with interacting with various browsers.
 
-It is responsible for: 
+## Assertion Library ##
 
-- defining the format in which to express expectations
-- creating a mechanism to hook into or drive the application under test
-- executing the tests
-- reporting results
+This layer is responsible for the logical assertions which constitute a test.
+
+## Testing Harness ##
+
+This layer is essentially the testing framework being used; so, in this case, it would be Intern and Nightwatch.
+
+## Test Case ##
+
+Actual test which can be written by a developer or a QA engineer.
+
 
