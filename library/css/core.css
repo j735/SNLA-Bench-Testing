@@ -1,0 +1,79 @@
+.carousel-wrapper {
+  position:relative;
+}
+.carousel-viewport {
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  position:relative;
+}
+.carousel-viewport ul,
+.carousel-viewport ul li {
+  margin:0;
+  padding:0;
+  position:relative;
+}
+.carousel-viewport ul li {
+  width:100%;
+  float:left;
+  display:block;
+  text-align:center;
+}
+.carousel-controls {
+  position:relative;
+}
+.carousel-pagination {
+  float:left;
+  display:block;
+}
+.carousel-pagination,
+.carousel-pagination li {
+	margin:0;
+	padding:0;
+	position:relative;
+}
+.carousel-pagination li {
+	float:left;	
+	display:block;
+}
+
+.carousel-no-transition {
+  transition: none !important;
+}
+
+/*
+ACCESSIBILITY
+---------------------------------*/
+/*
+	Render the element invisible to screen readers to make 
+	sure the content is ignored. This is used when 
+	the element needs to take up space in the document
+	flow for dimension calculations.
+*/
+.state-hidden {
+  visibility:hidden;
+}
+.state-hidden * {
+/* display:none;*/
+  visibility:hidden;
+}
+/*.carousel-viewport ul li {
+    outline:none;
+}
+.carousel-tile {
+    outline:20px dotted transparent;
+}
+.carousel-tile.state-focus {
+    outline-color:#0069ff !important;
+}*/
+
+/*
+FLOAT CLEARING
+---------------------------*/
+:after {
+    height:0;
+    clear:both;
+    content:".";
+    display:block;
+    visibility:hidden;
+}

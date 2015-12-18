@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Example Carousel</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="library/css/core.css" />
+	
+	<style>
+		.prevFrame {
+			position: absolute;
+      bottom: 0;
+      left: 0;
+		}
+		.nextFrame {
+			position: absolute;
+      bottom: 0;
+      right: 0;
+		}
+		.carousel-container {
+			clear: both;
+		}
+    .carousel-viewport li {
+      color: white;
+      font-family: Courier;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+		.carousel-viewport li:nth-child(odd) {
+			background-color: darkblue;
+		}
+    .carousel-viewport li:nth-child(even) {
+      background-color: darkred;
+    }
+    .carousel-viewport ul li img {
+      max-width:100%;
+    }
+    .carousel-viewport ul li p {
+      margin: 50% 0;
+    }
+    .carousel-pagination ul {
+      margin: 15px 0 10px;
+    }
+    .carousel-pagination li {
+      margin:0 5px;
+      background:none;
+    }
+    .carousel-pagination a {
+      color:#fff;
+      padding:0 5px;
+      background:blue;
+      display:inline-block;
+    }
+    .carousel-pagination a.selected {
+      background:red;
+    }
+    .carousel-controls {
+      margin:0 auto;
+      padding: 15px 0;
+      width: 100%;
+    }
+    /* TEMP */
+    body {
+      overflow:hidden;
+      text-align:center;
+    }
+    html {
+      overflow:hidden;
+    }
+    .carousel-wrapper {
+      width: 100%%;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+    .carousel-viewport ul li {
+/*      -webkit-transition:2s all ease-in-out;
+      transition:2s all ease-in-out;*/
+    }
+    .carousel-controls-wrapper {
+      margin-bottom: 25px;
+    }
+    .state-visible {
+/*      left:0%;*/
+    }
+    .state-hidden {
+/*      visibility:visible;
+      left:100%;*/
+    }
+    .carousel-viewport li {
+/*      box-sizing:border-box;*/
+/*      border: 2px solid red;*/
+    }
+	</style>
+	
+</head>
+<body>
+	<h1 id="title">Example Carousel</h1>
+  
+  <ul id="example-carousel">
+    <li><p>1</p></li>
+    <li><p>2</p></li>
+    <li><p>3</p></li>
+    <li><p>4</p></li>
+    <li><p>5</p></li>
+  </ul>
+  
+ <!--  <ul id="example-carousel-2">
+    <li><p>1</p></li>
+    <li><p>2</p></li>
+    <li><p>3</p></li>
+    <li><p>4</p></li>
+    <li><p>5</p></li>
+    <li><p>6</p></li>
+  </ul> -->
+	
+  <script src="library/js/vendor/require.js" data-main="library/js/demo.js"></script>
+</body>
+</html>

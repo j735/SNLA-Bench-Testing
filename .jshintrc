@@ -1,0 +1,29 @@
+{
+    // Suppresses warnings about comma-first coding style http://www.jshint.com/docs/options/#laxcomma
+    "laxcomma": true, 
+    // Use single quotes http://www.jshint.com/docs/options/#quotmark
+    "quotmark": "single", 
+    // Defines globals that are used for logging: console, alert, etc http://www.jshint.com/docs/options/#devel
+    "devel": true, 
+    // This option enforces specific tab width for your code http://www.jshint.com/docs/options/#indent
+    "indent": 4, 
+    // This options prohibits the use of == and != in favor of === and !== http://www.jshint.com/docs/options/#eqeqeq
+    "eqeqeq": true, 
+    // This option prohibits the use of unary increment and decrement operators http://www.jshint.com/docs/options/#plusplus
+    "plusplus": false, 
+    // This option warns when you have an empty block in your code http://www.jshint.com/docs/options/#noempty
+    "noempty": true, 
+    // This option warns when you define and never use your variables http://www.jshint.com/docs/options/#unused
+    "unused": "vars", 
+    // This option prohibits the use of explicitly undeclared variables http://www.jshint.com/docs/options/#undef
+    "undef": true, 
+    // This option requires you to always put curly braces around blocks in loops and conditionals http://www.jshint.com/docs/options/#curly
+    "curly": true, 
+    // This option makes it an error to leave a trailing whitespace in your code http://www.jshint.com/docs/options/#trailing
+    "trailing": false, 
+    // This option make JSHint check your source code against Douglas Crockford's JavaScript coding style http://www.jshint.com/docs/options/#white
+    "white": false, 
+    // This option disallows the use of dangling _ in variables. We don't know why would you need it http://www.jshint.com/docs/options/#nomen
+    "nomen": false,
+    "node": true
+}

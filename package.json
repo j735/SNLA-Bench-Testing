@@ -1,0 +1,17 @@
+{
+    "name": "benchtestingproject",
+    "version": "0.0.1",
+    "description": "Bench project to establish default testing infrastructure",
+    "scripts": {
+        "intern": "bash tests/support/intern-selenium.sh",
+        "nightwatch": "./node_modules/.bin/nightwatch -c ./tests/nightwatch.json"
+    },
+    "author": "SapientNitroLA",
+    "devDependencies": {
+        "intern": "^3.0.6",
+        "lodash": "^3.10.1",
+        "mocha": "^2.3.4",
+        "nightwatch": "^0.8.6",
+        "selenium-webdriver": "^2.44.0"
+    }
+}
