@@ -74,7 +74,7 @@ WebDriver is the browser automation API which enables the programmatic control o
 
 ## WebDriver Server/Client ##
 
-This layer interacts with the WebDriver API and generally provides a unified interface with interacting with various browsers.
+This layer interacts with the WebDriver API and generally provides a unified interface for interacting with various browsers.
 
 ## Assertion Library ##
 
