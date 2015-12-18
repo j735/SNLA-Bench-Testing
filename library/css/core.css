@@ -1,30 +1,30 @@
 .carousel-wrapper {
-  position:relative;
+    position:relative;
 }
 .carousel-viewport {
-  margin:0;
-  padding:0;
-  overflow:hidden;
-  position:relative;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    position:relative;
 }
 .carousel-viewport ul,
 .carousel-viewport ul li {
-  margin:0;
-  padding:0;
-  position:relative;
+    margin:0;
+    padding:0;
+    position:relative;
 }
 .carousel-viewport ul li {
-  width:100%;
-  float:left;
-  display:block;
-  text-align:center;
+    width:100%;
+    float:left;
+    display:block;
+    text-align:center;
 }
 .carousel-controls {
-  position:relative;
+    position:relative;
 }
 .carousel-pagination {
-  float:left;
-  display:block;
+    float:left;
+    display:block;
 }
 .carousel-pagination,
 .carousel-pagination li {
@@ -38,7 +38,7 @@
 }
 
 .carousel-no-transition {
-  transition: none !important;
+    transition: none !important;
 }
 
 /*
@@ -51,21 +51,11 @@ ACCESSIBILITY
 	flow for dimension calculations.
 */
 .state-hidden {
-  visibility:hidden;
+    visibility: hidden;
 }
 .state-hidden * {
-/* display:none;*/
-  visibility:hidden;
+    visibility: hidden;
 }
-/*.carousel-viewport ul li {
-    outline:none;
-}
-.carousel-tile {
-    outline:20px dotted transparent;
-}
-.carousel-tile.state-focus {
-    outline-color:#0069ff !important;
-}*/
 
 /*
 FLOAT CLEARING
@@ -76,4 +66,74 @@ FLOAT CLEARING
     content:".";
     display:block;
     visibility:hidden;
+} 
+
+.prevFrame {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.nextFrame {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.carousel-container {
+    clear: both;
+}
+.carousel-viewport li {
+    color: white;
+    font-family: Courier;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.carousel-viewport li:nth-child(odd) {
+    background-color: darkblue;
+}
+.carousel-viewport li:nth-child(even) {
+    background-color: darkred;
+}
+.carousel-viewport ul li img {
+    max-width: 100%;
+}
+.carousel-viewport ul li p {
+    margin: 50% 0;
+}
+.carousel-pagination ul {
+    margin: 15px 0 10px;
+}
+.carousel-pagination li {
+    margin:0 5px;
+    background:none;
+}
+.carousel-pagination a {
+    color:#fff;
+    padding:0 5px;
+    background:blue;
+    display:inline-block;
+}
+.carousel-pagination a.selected {
+    background:red;
+}
+.carousel-controls {
+    margin: 0 auto;
+    padding: 15px 0;
+    width: 100%;
+}
+/* TEMP */
+body {
+    overflow: hidden;
+    text-align: center;
+}
+html {
+    overflow: hidden;
+}
+.carousel-wrapper {
+    width: 100%%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+.carousel-controls-wrapper {
+    margin-bottom: 25px;
 }
