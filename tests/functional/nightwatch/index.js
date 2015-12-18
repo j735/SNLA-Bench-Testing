@@ -59,9 +59,10 @@ module.exports = {
 
         carouselPage
             .updateOptions( updateObj )
+            .pauseClick( '@pagination_1', waitTime )
+            .assert.visible( '@tile_1', messages.tileMsg( 1 ) )
+            .assert.visible( '@tile_2', messages.tileMsg( 2 ) )
             .assert.visible( '@tile_3', messages.tileMsg( 3 ) )
-            .assert.visible( '@tile_4', messages.tileMsg( 4 ) )
-            .assert.visible( '@tile_5', messages.tileMsg( 5 ) )
             ;
     }
 };
