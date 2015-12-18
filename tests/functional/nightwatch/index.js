@@ -1,5 +1,5 @@
 var data = require( '../../data/carousel-data' )
-    , messages = require( '../../support/messages' )()
+    , messages = require( '../../support/messages' )
     , carouselPage
     , waitTime = 1000
     ;

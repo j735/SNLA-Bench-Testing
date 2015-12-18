@@ -1,4 +1,4 @@
-module.exports = function () {
+module.exports = (function () {
     
     var prefixList = [ 'First', 'Second', 'Third', 'Fourth', 'Fifth' ]
         , messages = {
@@ -12,4 +12,4 @@ module.exports = function () {
     };
 
     return messages;
-};
+}());
