@@ -11,7 +11,7 @@ else
     printf 'Selenium server is not running yet, so load\n'
 
     # Start server
-    osascript -e 'tell application "Terminal" to do script "cd '$PWD'; java -jar tests/support/selenium-server-standalone-2.45.0.jar; sleep 15"'
+    osascript -e 'tell application "Terminal" to do script "cd '$PWD'; java -jar tests/support/selenium-server-standalone-2.45.0.jar -Dwebdriver.chrome.driver=tests/support/chromedriver; sleep 15"'
     printf 'Waiting for Selenium server to load\n'
 
     # Poll server
